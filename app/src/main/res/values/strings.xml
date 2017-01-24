@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Banners</string>
+    <string name="action_settings">Settings</string>
+    <string name="banner">Proyecto Final</string>
+    <string name="id_banner">ca-app-pub-1941115656927403/4715253577</string>
+    <string name="facebook_app_id">145042622664188</string>
+    <string name="error_login">Ha ocurrido un error al ingresar</string>
+    <string name="cancel_login">Has cancelado el login</string>
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
+</resources>

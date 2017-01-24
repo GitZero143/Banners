@@ -17,7 +17,14 @@
         android:text="@string/banner"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:id="@+id/textView" />
+    <com.facebook.login.widget.ProfilePictureView
+        android:id="@+id/profile_picture1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/logaut"
+        android:layout_centerHorizontal="true"></com.facebook.login.widget.ProfilePictureView>
     <com.google.android.gms.ads.AdView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -30,9 +37,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cerrar Sesión"
+        android:text="@string/cerrar_sesi_n"
         android:id="@+id/logaut"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:onClick="desconectar" />
+        android:onClick="desconectar"
+        android:background="#849fde" />
 </RelativeLayout>

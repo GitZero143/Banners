@@ -5,16 +5,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.facebook.login.widget.ProfilePictureView;
 
 public class LoginActivity extends AppCompatActivity {
 //objetos necesarios
     private LoginButton loginButton;
     private CallbackManager callbackManager;
+    private ProfilePictureView profilePicture;
+    private AccessToken accessToken;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +30,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
             //este metodo me lleva al main al hacer un login exitoso
+                accessToken=loginResult.getAccessToken();
+                Profile profile=Profile.getCurrentProfile();
+                if(profile!=null){
                 goMainScreen();
+                profilePicture.setProfileId(profile.getId());}
             }
 
             @Override
@@ -38,6 +47,9 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), R.string.error_login, Toast.LENGTH_SHORT).show();
             }
         });
+
+        profilePicture=(ProfilePictureView)findViewById(R.id.profile_picture);
+
     }
 
     private void goMainScreen() {
